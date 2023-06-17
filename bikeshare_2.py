@@ -22,7 +22,7 @@ def get_filters():
     days_check = ('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all')
     while True:
 
-        city = input("Select the city you want to analyze (chicago, new york city, washington)\n").lower()
+        city = input("\nPlease select the city you want to analyze (chicago, new york city, washington):\n").lower()
         if city in cities:
             break
         else:
@@ -31,7 +31,7 @@ def get_filters():
     # get user input for month (all, january, february, ... , june)
 
     while True:
-        month = input("Select which month you want to filter by, or type 'all' if you don't want to aplly filter by month.\n").lower()
+        month = input("\nPlease select which month you want to filter by, or type 'all' if you don't want to apply filter by month:\n").lower()
         if month in months_check:
             break
         else:
@@ -39,7 +39,7 @@ def get_filters():
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
-        day = input("What day you want to filter by ? Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday. Alternatively, you can enter 'all' if you don't want to filter by a specific day.\n").lower()
+        day = input("\nPlease enter the day you want to filter by (e.g. Sunday, Monday, Tuesday, etc.), or enter 'all' if you don't want to filter by a specific day:\n").lower()
         if day in days_check:
             break 
         else:
@@ -95,11 +95,11 @@ def display_data(df):
         None
     """
     start_loc = 0
-    user_display = input("Would you like to view 5 rows of raw data? Enter 'yes' or 'no': ").lower()
+    user_display = input("\nWould you like to view 5 rows of raw data? Enter 'yes' or 'no':\n").lower()
     while user_display == 'yes':
         print(df.iloc[start_loc:start_loc+5])
         start_loc += 5
-        user_display = input("Do you wish to continue? Enter 'yes' or 'no': ").lower()
+        user_display = input("\nDo you wish to continue? Enter 'yes' or 'no':\n").lower()
 
 
 def time_stats(df):
