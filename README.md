@@ -5,6 +5,15 @@ Created on June 17, 2023
 ### Project Title
 Explore US Bikeshare Data
 
+## Software Requirements
+
+Before running the script, make sure you have the following software installed on your local machine:
+
+- Python 3
+- Pandas library
+- Numpy library 
+- Text editor, VS Code (Recommended)
+
 ### Description
 
 This project focuses on analyzing bikeshare data using Python. The script prompts the user to input a city, month, and day to filter and analyze the bikeshare data. It then loads the data from the corresponding CSV file and applies the specified filters. The analysis provides insights into various aspects of bikeshare usage.
