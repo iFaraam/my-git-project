@@ -6,6 +6,24 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
+def get_input(prompt, valid_inputs):
+    """
+    Prompt user for input and validate against a list of valid inputs.
+
+    Args:
+        prompt (str): The prompt message to display to the user.
+        valid_inputs (list): List of valid input values.
+
+    Returns:
+        str: The user-selected input value.
+    """
+    while True:
+        user_input = input(prompt).lower()
+        if user_input in valid_inputs:
+            return user_input
+        else:
+            print("Invalid input. Please try again.")
+
 def get_filters():
     """
     Prompts user for input and returns selected city, month, and day for data analysis.
@@ -15,35 +33,11 @@ def get_filters():
         (str) month - User-selected month to filter data by, or "all" to apply no month filter.
         (str) day - User-selected day of the week to filter data by, or "all" to apply no day filter.
     """
-    print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). 
-    cities = ('chicago', 'new york city', 'washington')
-    months_check = ('january', 'february', 'march', 'april', 'may', 'june', 'all')
-    days_check = ('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all')
-    while True:
+    print('Hello! Let\'s explore some US bikeshare datnha!')
 
-        city = input("\nPlease select the city you want to analyze (chicago, new york city, washington):\n").lower()
-        if city in cities:
-            break
-        else:
-            print("Invalid city selection. Please make sure you provide the correct city name.\n")
-
-    # get user input for month (all, january, february, ... , june)
-
-    while True:
-        month = input("\nPlease select which month you want to filter by, or type 'all' if you don't want to apply filter by month:\n").lower()
-        if month in months_check:
-            break
-        else:
-            print("Invalid month selection. Please make sure you provide the correct month name.\n")
-
-    # get user input for day of week (all, monday, tuesday, ... sunday)
-    while True:
-        day = input("\nPlease enter the day you want to filter by (e.g. Sunday, Monday, Tuesday, etc.), or enter 'all' if you don't want to filter by a specific day:\n").lower()
-        if day in days_check:
-            break 
-        else:
-            print("Invalid day selection. Please make sure you provide the correct day name.\n")
+    city = get_input("\nPlease select the city you want to analyze (chicago, new york city, washington):\n", ['chicago', 'new york city', 'washington'])
+    month = get_input("\nPlease select which month you want to filter by, or type 'all' if you don't want to apply a month filter:\n", ['january', 'february', 'march', 'april', 'may', 'june', 'all'])
+    day = get_input("\nPlease enter the day you want to filter by (e.g., Sunday, Monday, Tuesday, etc.), or enter 'all' if you don't want to filter by a specific day:\n", ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all'])
 
     print('-'*40)
     return city, month, day
