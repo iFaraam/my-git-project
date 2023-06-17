@@ -1,17 +1,23 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
 
 ### Date created
-Include the date you created this project and README file.
+Created on June 17, 2023
 
 ### Project Title
-Replace the Project Title
+Explore US Bikeshare Data
 
 ### Description
-Describe what your project is about and what it does
+The script prompts the user to input a city, month, and day to filter and analyze the bikeshare data. It then loads the data from the corresponding CSV file and applies the specified filters.
+
+The script calculates various statistics and displays them to the user, including the most frequent times of travel, popular stations and trips, trip durations, and user statistics such as user types and, if available, gender and birth year information.
+
+Additionally, the script provides an option to display raw data upon user request.
 
 ### Files used
-Include the files used
+chicago.csv: Contains bikeshare data for the city of Chicago.
+new_york_city.csv: Contains bikeshare data for the city of New York City.
+washington.csv: Contains bikeshare data for the city of Washington. Gender/Birth year not included. 
 
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+These files are loaded into the script using the pd.read_csv() function to analyze and extract insights from the bikeshare data for the specified city, month, and day.
+
+
 
